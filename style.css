@@ -1,3 +1,85 @@
+:root {
+  --primary-color: #00ffae;
+  --text-color: #ffffff;
+  --section-bg: linear-gradient(
+    135deg,
+    rgba(0, 40, 30, 0.9),
+    rgba(0, 20, 15, 0.95)
+  );
+}
+/* HOW IT WORKS - TIMELINE */
+
+.how-it-works {
+  padding: 100px 10%;
+  background: var(--section-bg);
+  color: var(--text-color);
+  text-align: center;
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 80px;
+  color: var(--primary-color);
+}
+
+.timeline-wrapper {
+  position: relative;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.timeline-line::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-color),
+    transparent
+  );
+  animation: glowMove 4s linear infinite;
+}
+
+@keyframes glowMove {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0%); }
+}
+
+.timeline-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-step {
+  flex: 1;
+  min-width: 280px;
+  padding: 0 20px;
+}
+
+.step-number {
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.timeline-step h3 {
+  margin-bottom: 15px;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -418,6 +500,20 @@ body {
   .work-card img {
     height: auto;
   }
+  .timeline-steps {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 40px;
+}
+
+.timeline-step {
+  flex: 0 0 80%;
+  scroll-snap-align: center;
+}
+
+.timeline-line {
+  display: none;
+}
 }
 
 /* ================= ANIMATIONS ================= */
