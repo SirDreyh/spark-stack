@@ -575,6 +575,10 @@ body {
     0% { background-position: 0% center; }
     100% { background-position: 200% center; }
 }
+@keyframes arrowsweep {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
 .job-icon i {
     font-size: 28px;
     color: #22c55e;
@@ -589,10 +593,7 @@ body {
     50% { transform: translateX(6px); }
     100% { transform: translateX(0); }
 }
-@keyframes arrowsweep {
-    0% { left: -100%; }
-    100% { left: 100%; }
-}
+
 
 .job-card:hover .job-icon i {
     text-shadow:
