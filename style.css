@@ -484,11 +484,18 @@ body {
 /* Swipe Hint */
 .swipe-hint {
     display: none;
-    font-size: 14px;
+    font-size: 12px;
     opacity: 0.7;
     margin-top: 10px;
     animation: swipeBounce 1.5s infinite;
 }
+
+.arrow {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
 @media (max-width: 768px) {
   .work-grid {
     grid-template-columns: 1fr;
@@ -524,6 +531,22 @@ body {
 .swipe-hint {
     display: block;
 }
+.arrow::after {
+    content: "";
+    position: absoulute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.6),
+        transparent
+    );
+    animation: arrowsweeep 2s infinite;
+}
+
 }
 
 /* ================= ANIMATIONS ================= */
@@ -566,6 +589,11 @@ body {
     50% { transform: translateX(6px); }
     100% { transform: translateX(0); }
 }
+@keyframes arrowsweep {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
 .job-card:hover .job-icon i {
     text-shadow:
         0 0 20px #22c55e,
