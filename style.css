@@ -544,7 +544,7 @@ body {
         rgba(255,255,255,0.6),
         transparent
     );
-    animation: arrowsweeep 2s infinite;
+    animation: arrowSweep 2s infinite;
 }
 
 }
