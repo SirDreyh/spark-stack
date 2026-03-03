@@ -481,7 +481,14 @@ body {
 }
 
 /* ================= MOBILE ================= */
-
+/* Swipe Hint */
+.swipe-hint {
+    display: none;
+    font-size: 14px;
+    opacity: 0.7;
+    margin-top: 10px;
+    animation: swipeBounce 1.5s infinite;
+}
 @media (max-width: 768px) {
   .work-grid {
     grid-template-columns: 1fr;
@@ -513,6 +520,9 @@ body {
 
 .timeline-line {
   display: none;
+}
+.swipe-hint {
+    display: block;
 }
 }
 
@@ -551,7 +561,11 @@ body {
         0 0 50px rgba(34,197,94,0.6);
     transition: 0.3s ease;
 }
-
+@keyframes swipeBounce {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(6px); }
+    100% { transform: translateX(0); }
+}
 .job-card:hover .job-icon i {
     text-shadow:
         0 0 20px #22c55e,
