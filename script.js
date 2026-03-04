@@ -26,3 +26,11 @@ document.querySelectorAll(".nav-links a").forEach(link => {
     hamburger.classList.remove("active");
   });
 });
+const testimonials = document.querySelectorAll('.testimonial');
+let current = 0;
+
+setInterval(() => {
+    testimonials[current].classList.remove('active');
+    current = (current + 1) % testimonials.length;
+    testimonials[current].classList.add('active');
+}, 5000);

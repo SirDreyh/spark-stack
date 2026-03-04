@@ -480,6 +480,98 @@ body {
   max-width: 250px;
 }
 
+/* TESTIMONIAL SECTION */
+.testimonial-section {
+    position: relative;
+    padding: 80px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Moving Gradient Background */
+.testimonial-section::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle at center,
+        rgba(34, 197, 94, 0.25),
+        transparent 60%);
+    animation: waveMove 18s linear infinite;
+    z-index: 0;
+}
+
+.testimonial-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: auto;
+}
+
+.testimonial-content {
+    min-height: 280px;
+}
+
+.testimonial-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: auto;
+    min-height: 300px; /* ADD THIS */
+}
+.testimonial-section {
+    min-height: 400px;
+}
+
+.testimonial {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    width: 100%;
+}
+
+.testimonial.active {
+    opacity: 1;
+    position: relative;
+}
+
+.testimonial-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.stars {
+    color: #22c55e;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+}
+
+.testimonial-text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.testimonial h4 {
+    margin: 10px 0 5px;
+}
+
+.testimonial span {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* Background wave animation */
+@keyframes waveMove {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.1); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
 /* ================= MOBILE ================= */
 /* Swipe Hint */
 .swipe-hint {
@@ -496,6 +588,7 @@ body {
     overflow: hidden;
 }
 .arrow {
+    font-size: 28px;
     color: #22c55e;
     text-shadow:
         0 0 8px #22c55e,
@@ -690,4 +783,54 @@ body {
 .hamburger {
     display: flex;
   }
+}
+/* ========================= */
+/* MOBILE SNAKE BACKGROUND */
+/* ========================= */
+
+.snake-bg {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .testimonial-section {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .snake-bg {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -10%;
+        width: 120%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .snake-bg svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .snake-path {
+        stroke: #22c55e;
+        stroke-width: 3;
+        stroke-linecap: round;
+        opacity: 0.35;
+        filter: drop-shadow(0 0 10px #22c55e);
+        animation: snakeMove 8s ease-in-out infinite alternate;
+    }
+
+    .testimonial-content {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+@keyframes snakeMove {
+    0% { transform: translateX(-6%); }
+    100% { transform: translateX(6%); }
 }
