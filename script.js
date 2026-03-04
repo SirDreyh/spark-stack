@@ -34,3 +34,42 @@ setInterval(() => {
     current = (current + 1) % testimonials.length;
     testimonials[current].classList.add('active');
 }, 5000);
+/* ===================== */
+/* COUNT UP ANIMATION */
+/* ===================== */
+
+const statsSection = document.querySelector('.stats-section');
+const statNumbers = document.querySelectorAll('.stat-number');
+
+let started = false;
+
+function startCountUp() {
+    if (started) return;
+
+    const sectionTop = statsSection.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (sectionTop < screenHeight - 100) {
+        started = true;
+
+        statNumbers.forEach(stat => {
+            const target = +stat.getAttribute('data-target');
+            let count = 0;
+            const increment = target / 100;
+
+            const updateCount = () => {
+                if (count < target) {
+                    count += increment;
+                    stat.textContent = Math.floor(count);
+                    requestAnimationFrame(updateCount);
+                } else {
+                    stat.textContent = target;
+                }
+            };
+
+            updateCount();
+        });
+    }
+}
+
+window.addEventListener('scroll', startCountUp);
