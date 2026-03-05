@@ -912,3 +912,16 @@ body {
   color: #cbd5e1;
   letter-spacing: 1px;
 }
+#particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.stats-container {
+  position: relative;
+  z-index: 2;
+}
