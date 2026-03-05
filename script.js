@@ -34,42 +34,34 @@ setInterval(() => {
     current = (current + 1) % testimonials.length;
     testimonials[current].classList.add('active');
 }, 5000);
-/* ===================== */
-/* COUNT UP ANIMATION */
-/* ===================== */
+const counters = document.querySelectorAll(".stat-number");
 
-const statsSection = document.querySelector('.stats-section');
-const statNumbers = document.querySelectorAll('.stat-number');
+counters.forEach(counter => {
 
-let started = false;
+  const target = counter.getAttribute("data-target");
 
-function startCountUp() {
-    if (started) return;
+  if (!target) return; // Skip 24/7
 
-    const sectionTop = statsSection.getBoundingClientRect().top;
-    const screenHeight = window.innerHeight;
+  const updateCount = () => {
+    const current = +counter.innerText;
+    const increment = target / 100;
 
-    if (sectionTop < screenHeight - 100) {
-        started = true;
+    if (current < target) {
+      counter.innerText = Math.ceil(current + increment);
+      setTimeout(updateCount, 20);
+    } else {
+      // Format final number
+      let finalNumber = target;
 
-        statNumbers.forEach(stat => {
-            const target = +stat.getAttribute('data-target');
-            let count = 0;
-            const increment = target / 100;
+      if (target >= 1000000) {
+        finalNumber = "$" + (target / 1000000) + "M+";
+      } else {
+        finalNumber = target + "+";
+      }
 
-            const updateCount = () => {
-                if (count < target) {
-                    count += increment;
-                    stat.textContent = Math.floor(count);
-                    requestAnimationFrame(updateCount);
-                } else {
-                    stat.textContent = target;
-                }
-            };
-
-            updateCount();
-        });
+      counter.innerText = finalNumber;
     }
-}
+  };
 
-window.addEventListener('scroll', startCountUp);
+  updateCount();
+});
