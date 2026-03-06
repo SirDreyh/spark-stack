@@ -925,3 +925,55 @@ body {
   position: relative;
   z-index: 2;
 }
+/* PARTNERS SECTION */
+
+.partners-section{
+    padding:80px 10%;
+    text-align:center;
+}
+
+.partners-title{
+    font-size:38px;
+    font-weight:700;
+    margin-bottom:50px;
+    color:white;
+}
+
+.partners-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:40px;
+    align-items:center;
+}
+
+.partner{
+    background: white;
+    backdrop-filter: blur(10px);
+    padding:30px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:0.3s;
+}
+
+.partner img{
+    width:120px;
+    transition:0.3s;
+}
+
+.partner:hover img{
+    filter:grayscale(0%);
+    transform:scale(1.1);
+}
+@media(max-width:900px){
+
+.partners-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+.partner:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
