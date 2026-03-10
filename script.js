@@ -111,3 +111,42 @@ function animateParticles() {
 }
 
 animateParticles();
+/* DARK MODE TOGGLE */
+
+const darkModeBtn = document.getElementById("darkModeToggle");
+
+darkModeBtn.addEventListener("click", () => {
+
+document.body.classList.toggle("dark-mode");
+
+if(document.body.classList.contains("dark-mode")){
+darkModeBtn.textContent = "🌙";
+}else{
+darkModeBtn.textContent = "☀️";
+}
+
+});
+
+
+/* BACK TO TOP */
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+
+if(window.scrollY > 300){
+backToTop.style.display = "flex";
+}else{
+backToTop.style.display = "none";
+}
+
+});
+
+backToTop.addEventListener("click", () => {
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+});

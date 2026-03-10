@@ -983,3 +983,50 @@ body {
     transform:translateY(-5px);
     box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
+/* FLOATING BUTTONS */
+
+.floating-btn{
+position:fixed;
+left:20px;
+width:60px;
+height:60px;
+border-radius:50%;
+background:transparent;
+border:3px solid #00ff9d;
+color:#00ff9d;
+font-size:26px;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+transition:all 0.3s ease;
+z-index:1000;
+}
+
+/* DARK MODE BUTTON POSITION */
+
+#darkModeToggle{
+top:120px;
+}
+
+/* BACK TO TOP BUTTON */
+
+#backToTop{
+top:200px;
+display:none;
+}
+
+/* HOVER EFFECT */
+
+.floating-btn:hover{
+background:#00ff9d;
+color:#021018;
+box-shadow:0 0 20px #00ff9d;
+}
+
+/* DARK MODE SITE STYLE */
+
+.dark-mode{
+background:#05070d;
+color:white;
+}
