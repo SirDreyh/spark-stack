@@ -111,3 +111,31 @@ function animateParticles() {
 }
 
 animateParticles();
+/* ================= THEME TOGGLE ================= */
+
+const themeToggle = document.getElementById("themeToggle");
+
+themeToggle.addEventListener("click", () => {
+
+    document.body.classList.toggle("dark-mode");
+
+    /* CHANGE ICON */
+
+    if(document.body.classList.contains("dark-mode")) {
+
+  themeToggle.innerHTML =
+'<i data-lucide="moon"></i>';
+
+lucide.createIcons();
+
+    } else {
+
+      themeToggle.innerHTML =
+'<i data-lucide="sun-medium"></i>';
+
+lucide.createIcons();
+
+    }
+
+});
+lucide.createIcons();

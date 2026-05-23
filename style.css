@@ -766,6 +766,77 @@ body {
     margin: 0;
     padding: 0;
 }
+/* ================= THEME TOGGLE ================= */
+
+.theme-toggle {
+
+    width: 72px;
+    height: 72px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow:
+      0 8px 24px rgba(0,0,0,0.06);
+
+    transition: all 0.3s ease;
+}
+
+/* ICON */
+
+.theme-toggle svg {
+
+    width: 28px;
+    height: 28px;
+
+    stroke: #111827;
+
+    stroke-width: 2.5;
+
+}
+
+/* HOVER */
+
+.theme-toggle:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+      0 12px 28px rgba(0,0,0,0.10);
+
+}
+
+/* DARK MODE BUTTON */
+
+.dark-mode .theme-toggle {
+
+    background: rgba(8,12,10,0.95);
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    box-shadow:
+      0 8px 24px rgba(0,0,0,0.35);
+
+}
+
+/* DARK MODE ICON */
+
+.dark-mode .theme-toggle svg {
+
+    stroke: #ffffff;
+
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.35));
+
+}
 
 /* ================= HAMBURGER ================= */
 
