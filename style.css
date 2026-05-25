@@ -143,23 +143,38 @@ body {
 /* ================= NAVBAR ================= */
 
 .navbar {
+
     position: fixed;
+
     top: 0;
+
     width: 100%;
-    height: 75px;
-    padding: 0 10px;
+
+    height: 85px;
+
+    padding: 0 24px;
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
-    background: var(--navbar-bg);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+
+    background: rgba(255,255,255,0.75);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+
     z-index: 1000;
+
 }
 
 .logo img {
-    width: 260px;
-    height: 200px;
+    width: 190px;
+    height: auto;
     display: block;
 }
 
@@ -837,14 +852,25 @@ body {
     filter: drop-shadow(0 0 6px rgba(255,255,255,0.35));
 
 }
+/* ================= NAV CONTROLS ================= */
 
+.nav-controls {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
 /* ================= HAMBURGER ================= */
 
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    gap: 6px;
+    gap: 5px;
+    margin-left: 14px;
 }
 
 .hamburger span {
