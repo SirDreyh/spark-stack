@@ -770,10 +770,10 @@ body {
 
 .theme-toggle {
 
-    width: 58px;
-    height: 58px;
+    width: 54px;
+    height: 54px;
 
-    border-radius: 50%;
+    border-radius: 18%;
 
     border: none;
 
@@ -795,8 +795,8 @@ body {
 
 .theme-toggle svg {
 
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
 
     stroke: #111827;
 
